@@ -12021,4 +12021,15 @@ textarea.form-control-lg {
 .popover-body {
   color: #333; /* Texto oscuro para la información */
   font-size: 0.95rem;
+}
+
+.fondo-texto {
+  background: rgba(216, 233, 240, 0.3);
+  /* 2. EL TRUCO: Esto desenfoca lo que pase por detrás */
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(20px); /* Para que funcione en Safari/iPhone */
+  /* 3. Borde sutil abajo para delimitar el vidrio */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* 4. Sombra suave */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=style.css.map */
