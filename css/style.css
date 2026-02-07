@@ -488,9 +488,10 @@ select:disabled {
 button,
 [type=button],
 [type=reset],
-[type=submit] {
+[type=submit]
+/* {
   -webkit-appearance: button;
-}
+}*/
 button:not(:disabled),
 [type=button]:not(:disabled),
 [type=reset]:not(:disabled),
@@ -545,10 +546,10 @@ legend + * {
   height: auto;
 }
 
-[type=search] {
+/*[type=search] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
-}
+}*/
 [type=search]::-webkit-search-cancel-button {
   cursor: pointer;
   filter: grayscale(1);
@@ -572,7 +573,7 @@ legend + * {
 
 ::file-selector-button {
   font: inherit;
-  -webkit-appearance: button;
+  /*-webkit-appearance: button;*/
 }
 
 output {
@@ -3391,7 +3392,7 @@ textarea.form-control-lg {
   --bs-dropdown-spacer: 0.125rem;
   --bs-dropdown-font-size: 1rem;
   --bs-dropdown-color: var(--bs-body-color);
-  --bs-dropdown-bg: cyan;
+  --bs-dropdown-bg: rgb(35, 79, 79);
   --bs-dropdown-border-color: var(--bs-border-color-translucent);
   --bs-dropdown-border-radius: var(--bs-border-radius);
   --bs-dropdown-border-width: var(--bs-border-width);
@@ -3400,10 +3401,10 @@ textarea.form-control-lg {
   --bs-dropdown-divider-margin-y: 0.5rem;
   --bs-dropdown-box-shadow: var(--bs-box-shadow);
   --bs-dropdown-link-color: var(--bs-body-color);
-  --bs-dropdown-link-hover-color: var(--bs-body-color);
-  --bs-dropdown-link-hover-bg: blue;
-  --bs-dropdown-link-active-color: #fff;
-  --bs-dropdown-link-active-bg: #0d6efd;
+  --bs-dropdown-link-hover-color: black;
+  --bs-dropdown-link-hover-bg: rgb(236, 221, 221);
+  --bs-dropdown-link-active-color: #101010;
+  --bs-dropdown-link-active-bg: rgb(236, 221, 221);
   --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
   --bs-dropdown-item-padding-x: 1rem;
   --bs-dropdown-item-padding-y: 0.25rem;
@@ -4341,7 +4342,7 @@ textarea.form-control-lg {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
   --bs-card-title-spacer-y: 0.5rem;
-  --bs-card-title-color: blue;
+  /*--bs-card-title-color: blue;*/
   --bs-card-subtitle-color: ;
   --bs-card-border-width: var(--bs-border-width);
   --bs-card-border-color: var(--bs-border-color-translucent);
@@ -4354,7 +4355,7 @@ textarea.form-control-lg {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: white;
-  --bs-card-bg: cyan;
+  /*--bs-card-bg: cyan;*/
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
@@ -4364,10 +4365,29 @@ textarea.form-control-lg {
   height: var(--bs-card-height);
   color: var(--bs-body-color);
   word-wrap: break-word;
-  background-color: var(--bs-card-bg);
+  /*background-color: var(--bs-card-bg);*/
   background-clip: border-box;
-  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  /*border: var(--bs-card-border-width) solid var(--bs-card-border-color);*/
   border-radius: var(--bs-card-border-radius);
+  /* Color de fondo: azul oscuro con 70% de opacidad */
+    background-color: rgba(14, 42, 71, 0.7);
+    
+    /* Efecto de desenfoque del fondo (Vidrio) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Borde sutil para definir la tarjeta */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Quitamos el radio de borde por defecto y ponemos uno más moderno */
+    border-radius: 15px;
+    
+    /* Sombra suave para dar profundidad */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    /* Para suavizar la animación al pasar el mouse */
+    transition: all 0.3s ease;
+    overflow: hidden; /* Asegura que la imagen respete el borde redondeado */
 }
 .card > hr {
   margin-right: 0;
@@ -4396,6 +4416,7 @@ textarea.form-control-lg {
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
   color: var(--bs-card-color);
+  
 }
 
 .card-title {
@@ -5986,6 +6007,11 @@ textarea.form-control-lg {
 
 .carousel {
   position: relative;
+}
+.carousel-item img {
+    height: 500px; /* Puedes bajarlo a 400px o 350px si lo quieres más bajito */
+    object-fit: cover; /* IMPORTANTE: Esto evita que la imagen se deforme/aplaste */
+    object-position: center; /* Centra la imagen al recortarla */
 }
 
 .carousel.pointer-event {
@@ -12026,7 +12052,7 @@ textarea.form-control-lg {
 .fondo-texto {
   background: rgba(216, 233, 240, 0.3);
   /* 2. EL TRUCO: Esto desenfoca lo que pase por detrás */
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px); /* Para que funcione en Safari/iPhone */
   /* 3. Borde sutil abajo para delimitar el vidrio */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
